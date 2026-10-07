@@ -1,0 +1,461 @@
+﻿:root {
+  --bg-primary: #f7f5f1;
+  --bg-secondary: #eef2ef;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-strong: rgba(255, 255, 255, 0.94);
+  --text-primary: #16272d;
+  --text-secondary: #54686d;
+  --accent-gold: #e8bd69;
+  --accent-gold-soft: #f5d796;
+  --line: rgba(22, 39, 45, 0.08);
+  --whatsapp: #25d366;
+  --shadow: 0 24px 48px rgba(15, 35, 37, 0.08);
+  --shadow-soft: 0 16px 28px rgba(15, 35, 37, 0.08);
+  --container: 1180px;
+  --transition: 220ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #f8f7f4 0%, #f2f5f3 100%);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+body[dir="rtl"] {
+  font-family: "Cairo", "Tajawal", "Segoe UI", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+.site-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(232, 189, 105, 0.18), transparent 20%),
+    radial-gradient(circle at 80% 10%, rgba(36, 109, 120, 0.08), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(242, 245, 243, 0.92));
+}
+
+.container {
+  width: min(var(--container), calc(100% - 26px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.68);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 66px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: var(--text-primary);
+}
+
+.brand-kicker {
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.brand-name {
+  font-size: clamp(0.92rem, 2vw, 1.24rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px;
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.lang-btn.is-active {
+  background: rgba(232, 189, 105, 0.24);
+  color: var(--text-primary);
+}
+
+.hero-screen {
+  display: flex;
+  min-height: calc(100vh - 66px);
+  align-items: center;
+}
+
+.hero {
+  width: 100%;
+  padding: 24px 0 28px;
+}
+
+.hero-inner {
+  display: grid;
+  align-items: center;
+  gap: 22px;
+}
+
+.hero-copy {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #c18d2e;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(2.5rem, 9vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.07em;
+  text-wrap: balance;
+}
+
+.hero-support {
+  margin: 14px auto 0;
+  max-width: 36rem;
+  color: var(--text-secondary);
+  font-size: clamp(0.98rem, 2.7vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.cta-group {
+  margin-top: 20px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  min-width: 160px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-soft));
+  color: #1f1a13;
+  box-shadow: 0 14px 30px rgba(232, 189, 105, 0.26);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--text-primary);
+  border-color: rgba(22, 39, 45, 0.08);
+}
+
+.microcopy {
+  margin: 12px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.carousel-wrap {
+  width: min(100%, 620px);
+  margin: 0 auto;
+}
+
+.carousel-stage {
+  position: relative;
+  min-height: 390px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(22, 39, 45, 0.08);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.product-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.02);
+  transition: opacity 500ms ease, transform 500ms ease, visibility 500ms ease;
+}
+
+.product-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.product-visual {
+  position: relative;
+  height: 100%;
+  min-height: 390px;
+  overflow: hidden;
+  background: #e6e9e7;
+}
+
+.product-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.04);
+}
+
+.product-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 28, 30, 0.08), rgba(15, 28, 30, 0.35));
+}
+
+.product-badge {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(22, 39, 45, 0.08);
+  color: var(--text-primary);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.product-meta {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(22, 39, 45, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.product-name,
+.product-detail {
+  display: block;
+}
+
+.product-name {
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.product-detail {
+  color: #7a8d8f;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border: 0;
+  background: rgba(22, 39, 45, 0.18);
+  border-radius: 50%;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.dot.is-active {
+  background: var(--accent-gold);
+  transform: scale(1.2);
+}
+
+.floating-whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 25;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 122px;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0e1a1e;
+  background: linear-gradient(135deg, #4fe085, var(--whatsapp));
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.25);
+}
+
+[dir="rtl"] .button-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-copy {
+  text-align: right;
+}
+
+[dir="rtl"] .microcopy {
+  text-align: right;
+}
+
+@media (min-width: 760px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.02fr) minmax(300px, 0.98fr);
+    gap: 30px;
+  }
+
+  .hero-copy {
+    margin: 0;
+    text-align: left;
+  }
+
+  .hero-support {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .button-row {
+    justify-content: flex-start;
+  }
+
+  .carousel-wrap {
+    margin: 0;
+    width: 100%;
+  }
+
+  .carousel-stage,
+  .product-visual {
+    min-height: 440px;
+  }
+
+  [dir="rtl"] .hero-copy {
+    text-align: right;
+  }
+}
+
+@media (max-width: 430px) {
+  .topbar {
+    min-height: 62px;
+  }
+
+  .brand-name {
+    font-size: 0.8rem;
+  }
+
+  .lang-btn {
+    padding: 7px 9px;
+    letter-spacing: 0.06em;
+  }
+
+  .hero {
+    padding: 18px 0 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 9vw, 3rem);
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .floating-whatsapp {
+    right: 14px;
+    bottom: 14px;
+    min-height: 48px;
+  }
+}
